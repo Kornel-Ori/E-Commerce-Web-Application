@@ -1,4 +1,4 @@
-const cacheName = 'react_app_version_1.0'
+const cacheName = 'react_routing_version_1.0'
 
 const filesToCache =
         ['manifest.json',

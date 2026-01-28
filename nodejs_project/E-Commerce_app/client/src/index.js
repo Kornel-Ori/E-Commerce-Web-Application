@@ -5,6 +5,7 @@ import {App} from "./App"
 
 ReactDOM.render(<App/>, document.getElementById(`root`))
 
+
 // Register the service worker
 window.addEventListener('load', () => 
 {

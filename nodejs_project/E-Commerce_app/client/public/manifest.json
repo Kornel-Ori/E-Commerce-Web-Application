@@ -1,7 +1,7 @@
 {
-   "name": "react_app",
-   "short_name": "react_app",
-   "description": "react_app Worked Example",
+   "name": "react_routing",
+   "short_name": "react_routing",
+   "description": "react_routing Worked Example",
    "start_url": "./",
    "scope": ".",
    "display": "standalone",

@@ -1,5 +1,5 @@
 {
-  "name": "react_app",
+  "name": "react_routing",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -32,7 +32,7 @@
       "last 1 safari version"
     ]
   },
-  "description": "Example using React as the client-side of a Node Express App",
+  "description": "React routing example",
   "main": "index.js",
   "author": "Derek O Reilly",
   "license": "ISC"
