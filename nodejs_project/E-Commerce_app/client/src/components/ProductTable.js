@@ -1,23 +1,25 @@
 import React from "react"
-import {CarTableRow} from "./CarTableRow"
+import ProductTableRow from "./ProductTableRow"
 
-
-export const CarTable = props =>
-{
+const ProductTable = (props) => {
     return (
-    <table>
-        <thead>
+        <table>
+            <thead>
             <tr>
-                <th>Model</th>
-                <th>Colour</th>
-                <th>Year</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Energy Rating</th>
                 <th>Price</th>
             </tr>
-        </thead>
-    
-        <tbody>
-            {props.cars.map((car) => <CarTableRow key={car._id} car={car}/>)}
-    </tbody>
-    </table>
+            </thead>
+
+            <tbody>
+            {props.products.map((product) => (
+                <ProductTableRow key={product._id} product={product} />
+            ))}
+            </tbody>
+        </table>
     )
 }
+
+export default ProductTable

@@ -1,33 +1,34 @@
 // Server-side global variables
-require(`dotenv`).config({path:`./config/.env`})
-
+require('dotenv').config({ path: './config/.env' })
 
 // Express
-const express = require(`express`)
+const express = require('express')
 const app = express()
 
+// Middleware
+app.use(require('body-parser').json())
+app.use(require('cors')({
+    credentials: true,
+    origin: process.env.LOCAL_HOST
+}))
 
-app.use(require(`body-parser`).json())
-app.use(require(`cors`)({credentials: true, origin: process.env.LOCAL_HOST}))
+// Routes
+app.use(require('./routes/products'))
 
-app.use(require(`./routes/cars`))
 // Port
-app.listen(process.env.SERVER_PORT, () => 
-{
-    console.log(`Connected to port ` + process.env.SERVER_PORT)
+app.listen(process.env.SERVER_PORT, () => {
+    console.log('Connected to port ' + process.env.SERVER_PORT)
 })
 
-app.use(require(`./routes/cars`))
-
 // Error 404
-app.use((req, res, next) => {next(createError(404))})
+app.use((req, res, next) => {
+    next(createError(404))
+})
 
 // Other errors
-app.use(function (err, req, res, next)
-{
+app.use((err, req, res, next) => {
     console.error(err.message)
-    if (!err.statusCode) 
-    {
+    if (!err.statusCode) {
         err.statusCode = 500
     }
     res.status(err.statusCode).send(err.message)

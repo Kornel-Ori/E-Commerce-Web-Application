@@ -1,32 +1,38 @@
 const router = require(`express`).Router()
+//TODO
+// Get all products
+// Get single product
+// Create product (admin)
+// Update product (admin)
+// Delete product (admin)
 
-let products = [{_id:0, model:"A", colour:"Red", year:2020, price:30000},
-            {_id:1, model:"Yaris", colour:"Green", year:2010, price:2000},
-            {_id:2, model:"Corolla", colour:"Red", year:2019, price:20000},
-            {_id:3, model:"Avensis", colour:"Silver", year:2018, price:20000},
-            {_id:4, model:"Camry", colour:"White", year:2020, price:50000}]
+let products = [
+    {_id: 0, name: "Eco Fridge", category: "Fridge", energyRating: "A++", price: 900},
+    {_id: 1, name: "Smart Washer", category: "Washing Machine", energyRating: "A+++", price: 650},
+    {_id: 2, name: "Eco Dishwasher", category: "Dishwasher", energyRating: "A++", price: 700}
+]
 
 let uniqueId = products.length
 
-router.get(`/products`, (req, res) => 
-    {   
-        res.json(products)
-    })
+// GET all products
+router.get('/products', (req, res) => {
+    res.json(products)
+})
 
-    router.post(`/add/:model/:colour/:year/:price`, (req, res) => 
-    {
-        cars.push({_id:uniqueId,
-                    model:req.params.model,
-                    colour:req.params.colour,
-                    year:req.params.year,
-                    price:req.params.price,
-                    })
-       uniqueId++
-                    res.json({_id:uniqueId,
-                        model:req.params.model,
-                        colour:req.params.colour,
-                        year:req.params.year,
-                        price:req.params.price,
-                        })
-    })
+// ADD a product
+router.post('/add/:name/:category/:energyRating/:price', (req, res) => {
+    let newProduct = {
+        _id: uniqueId,
+        name: req.params.name,
+        category: req.params.category,
+        energyRating: req.params.energyRating,
+        price: req.params.price
+    }
+
+    products.push(newProduct)
+    uniqueId++
+
+    res.json(newProduct)
+})
+
 module.exports = router
