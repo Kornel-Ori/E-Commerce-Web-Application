@@ -3,13 +3,14 @@ import ProductTableRow from "./ProductTableRow"
 
 const ProductTable = (props) => {
     return (
-        <table>
+        <table className="table">
             <thead>
             <tr>
                 <th>Name</th>
                 <th>Category</th>
                 <th>Energy Rating</th>
                 <th>Price</th>
+                <th>Quantity</th>
                 <th>Add</th>
                 {/* <th>Delete</th> */}
             </tr>

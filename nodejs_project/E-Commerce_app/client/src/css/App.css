@@ -1,17 +1,28 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 
 .form-container,
-.table-container 
-{
-  max-width: 700px;
-  margin: 0 auto;
+.table-container {
+    max-width: 80%;
+    margin: 5% auto;
 }
 
-.form-container
-{
-      border:thin solid #aaaaaa;
+.form-container {
+    border: thin solid #aaaaaa;
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -19,88 +30,125 @@
     background: #f7f7f7;
 }
 
-.nav-bar{
-    width: 100%;
-    height: 60px;
-    color: #7e7e7e;
-}
-.search-bar{
-    border-radius: 5px;
+.nav-bar {
+    background-color: #343a40;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 15px 30px;
+    border-bottom: 2px solid #ccc;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
 }
 
-.logout
-{
-    margin-bottom:30px;
+.search-bar {
+    border-radius: 4px;
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
 }
-.cart-button{
+
+.cart-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cart-link:hover {
+    transform: scale(1.5);
+    transition: color 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.button-minus,
+.button-plus {
+    padding: 7px 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 10px;
+    position: relative;
+    top: 1px;
+}
+
+.logout {
+    margin-bottom: 30px;
+}
+
+.cart-button {
     float: inline-end;
 }
+
+.table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
 /* link buttons */
 .cart-button,
 .green-button,
 .red-button,
-.blue-button
-{
-  padding: 7px 10px;
-  font-size: 0.875rem;
-  line-height: normal;
-  border-radius: 0.2rem;
-  color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
-  margin-right: 10px;
-  position: relative;
-  top: 1px;  
-  text-decoration: none;
-  cursor:pointer;
+.blue-button {
+    padding: 7px 10px;
+    line-height: normal;
+    border-radius: 0.2rem;
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 10px;
+    position: relative;
+    top: 1px;
 }
 
-.green-button
-{
+.green-button {
     background-color: #28a745;
 }
 
-.red-button
-{
+.red-button {
     background-color: #dc3545;
 }
 
-.blue-button
-{
+.blue-button {
     background-color: #3545dc;
 }
 
 .green-button:hover,
 .red-button:hover,
-.blue-button:hover
-{
+.blue-button:hover {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
 }
 
-.green-button:hover
-{
-    background-color: #107020; 
+.green-button:hover {
+    background-color: #107020;
 }
 
-.red-button:hover
-{
-  background-color: #a01020; 
+.red-button:hover {
+    background-color: #a01020;
 }
 
-.blue-button:hover
-{
-  background-color: #1020a0; 
+.blue-button:hover {
+    background-color: #1020a0;
 }
+
 /* end of link buttons */
 
 
 
 
-input [type="button"] 
-{
-color:pink;
+input [type="button"] {
+    color: pink;
 }
 
 
@@ -109,42 +157,37 @@ color:pink;
 
 
 /* table of cars */
-.table-container table
-{
-    width:100%;
-    border-collapse:collapse;
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.table-container thead
-{
+.table-container thead {
     background-color: #aaa;
-    color:#fff;
+    color: #fff;
     text-align: left;
     text-transform: capitalize;
 }
 
-.table-container tbody tr
-{
-    height:3em;
+.table-container tbody tr {
+    height: 3em;
 }
 
 .table-container thead th,
-.table-container tbody td
-{
-    padding:5px;
+.table-container tbody td {
+    padding: 5px;
 }
-.table-container tbody tr:nth-child(odd) 
-{
+
+.table-container tbody tr:nth-child(odd) {
     background-color: #eee;
 }
 
-.table-container tbody tr:nth-child(even) 
-{
+.table-container tbody tr:nth-child(even) {
     background-color: #ffa;
 }
 
-.add-new-car
-{
-    margin-top:1em;
+.add-new-car {
+    margin-top: 1em;
 }
+
 /*end of table of cars */
