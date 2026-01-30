@@ -10,6 +10,8 @@ const ProductTable = (props) => {
                 <th>Category</th>
                 <th>Energy Rating</th>
                 <th>Price</th>
+                <th>Add</th>
+                {/* <th>Delete</th> */}
             </tr>
             </thead>
 

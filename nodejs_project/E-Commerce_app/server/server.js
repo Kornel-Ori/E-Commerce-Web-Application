@@ -14,6 +14,7 @@ app.use(require('cors')({
 
 // Routes
 app.use(require('./routes/products'))
+app.use(require('./routes/cart'))
 
 // Port
 app.listen(process.env.SERVER_PORT, () => {
