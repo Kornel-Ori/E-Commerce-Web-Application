@@ -36,3 +36,4 @@ router.post('/add/:name/:category/:energyRating/:price', (req, res) => {
 })
 
 module.exports = router
+module.exports.products = products

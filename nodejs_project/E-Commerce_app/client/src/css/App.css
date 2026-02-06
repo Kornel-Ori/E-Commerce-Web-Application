@@ -30,6 +30,13 @@ html {
     background: #f7f7f7;
 }
 
+.Login-input-fields{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    flex-direction: column;
+}
 .nav-bar {
     background-color: #343a40;
     color: #fff;

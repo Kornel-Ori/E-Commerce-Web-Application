@@ -28,7 +28,7 @@ const Home = () => {
             </p>
             
             <Link 
-                to="/DisplayAllProducts" 
+                to="/Login" 
                 className="green-button"
                 style={{
                     display: "inline-block",

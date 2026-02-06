@@ -19,7 +19,7 @@ const Cart = (props) => {
                 setLoading(false)
             })
     }, [])
-    
+
     const calculateTotal = () => {
         return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
     }

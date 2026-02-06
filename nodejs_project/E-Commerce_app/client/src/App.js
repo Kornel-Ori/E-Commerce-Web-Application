@@ -5,6 +5,8 @@ import DisplayAllProducts from "./components/DisplayAllProducts"
 import AddProduct from "./components/AddProduct"
 import Cart from "./components/Cart"
 import Layout from "./components/Layout"
+import Login from "./components/Login"
+
 import "./css/App.css"
 
 const App = (props) => {
@@ -13,6 +15,7 @@ const App = (props) => {
             <Layout>
                 <Switch>
                     <Route exact path="/" component={Home} />
+                    <Route exact path="/Login" component={Login} />
                     <Route exact path="/DisplayAllProducts" component={DisplayAllProducts} />
                     <Route exact path="/AddProduct" component={AddProduct} />
                     <Route exact path="/cart" component={Cart} />
