@@ -7,24 +7,24 @@ const ProductTableRow = (props) => {
     const [quantity, setQuantity] = useState(1)
     const [showModal, setShowModal] = useState(false)
     const [modalMessage, setModalMessage] = useState("")
-    
+
     const increaseQuantity = () => {
         setQuantity(quantity + 1)
     }
-    
+
     const decreaseQuantity = () => {
         if (quantity > 1) {
             setQuantity(quantity - 1)
         }
     }
-    
+
     const handleQuantityChange = (e) => {
         const value = parseInt(e.target.value)
         if (value > 0) {
             setQuantity(value)
         }
     }
-    
+
     const addToCart = () => {
         axios.post(`${SERVER_HOST}/cart/add/${props.product._id}/${quantity}`)
             .then(res => {
@@ -36,7 +36,7 @@ const ProductTableRow = (props) => {
                 console.error("Error adding to cart:", err)
             })
     }
-    
+
     return (
         <tr>
             <td>
@@ -62,13 +62,13 @@ const ProductTableRow = (props) => {
                     <button onClick={decreaseQuantity} className="button-minus">
                         -
                     </button>
-                    <input 
-                        type="number" 
+                    <input
+                        type="number"
                         value={quantity}
                         onChange={handleQuantityChange}
                         min="1"
-                        style={{ 
-                            width: "50px", 
+                        style={{
+                            width: "50px",
                             textAlign: "center",
                             padding: "5px",
                             WebkitAppearance: "none",
@@ -85,13 +85,13 @@ const ProductTableRow = (props) => {
                     Add to Cart
                 </button>
             </td>
-            <Modal 
+            <Modal
                 show={showModal}
                 message={modalMessage}
                 onClose={() => setShowModal(false)}
             />
         </tr>
-        
+
     )
 }
 

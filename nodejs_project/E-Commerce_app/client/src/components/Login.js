@@ -18,7 +18,7 @@ const Login = (props) => {
     }, [])
     
     return (
-        <div className="form-container" style={{width: "50%"}}>
+        <div className="form-container" style={{maxWidth: "400px"}}>
             <h1>Login</h1>
             <div style={{ marginBottom: "20px" }}>
                     <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>
@@ -57,8 +57,8 @@ const Login = (props) => {
                         }}
                     />
                 </div>
-            <Link className="blue-button" to="/DisplayAllProducts">
-                Add New Product
+            <Link to="/DisplayAllProducts" className="green-button">
+                Login
             </Link>
         </div>
     )

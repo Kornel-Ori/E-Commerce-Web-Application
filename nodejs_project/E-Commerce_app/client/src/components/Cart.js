@@ -6,7 +6,7 @@ import { SERVER_HOST } from "../config/global_constants"
 const Cart = (props) => {
     const [cartItems, setCartItems] = useState([])
     const [loading, setLoading] = useState(true)
-    
+
     useEffect(() => {
         // Fetch cart from server
         axios.get(`${SERVER_HOST}/cart`)
@@ -23,7 +23,7 @@ const Cart = (props) => {
     const calculateTotal = () => {
         return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
     }
-    
+
     const removeFromCart = (productId) => {
         axios.delete(`${SERVER_HOST}/cart/remove/${productId}`)
             .then(res => {
@@ -33,7 +33,7 @@ const Cart = (props) => {
                 console.error("Error removing from cart:", err)
             })
     }
-    
+
     const updateQuantity = (productId, newQuantity) => {
         axios.put(`${SERVER_HOST}/cart/update/${productId}/${newQuantity}`)
             .then(res => {
@@ -43,18 +43,18 @@ const Cart = (props) => {
                 console.error("Error updating quantity:", err)
             })
     }
-    
+
     if (loading) {
         return <div className="form-container">Loading cart...</div>
     }
-    
+
     return (
         <div className="form-container">
             <h1>Shopping Cart</h1>
             {cartItems.length === 0 ? (
                 <p>Your cart is empty</p>
             ) : (
-                <>
+                <div className="table-container">
                     <table className="table">
                         <thead>
                             <tr>
@@ -100,11 +100,12 @@ const Cart = (props) => {
                         <h3>Total: €{calculateTotal().toFixed(2)}</h3>
                     </div>
                     <button className="green-button">Checkout</button>
-                </>
-            )}
-            <Link className="blue-button" to="/DisplayAllProducts">
+                    <Link className="blue-button" to="/DisplayAllProducts">
                 Continue Shopping
             </Link>
+                </div>
+            )}
+            
         </div>
     )
 }

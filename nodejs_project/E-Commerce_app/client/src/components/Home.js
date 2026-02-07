@@ -27,30 +27,10 @@ const Home = () => {
                 Quality products with great energy ratings for your home.
             </p>
             
-            <Link 
-                to="/Login" 
-                className="green-button"
-                style={{
-                    display: "inline-block",
-                    padding: "15px 40px",
-                    fontSize: "20px",
-                    textDecoration: "none",
-                    borderRadius: "5px"
-                }}
-            >
+            <Link to="/Login" className="green-button">
                 Login
             </Link>
-            <Link 
-                to="/DisplayAllProducts" 
-                className="green-button"
-                style={{
-                    display: "inline-block",
-                    padding: "15px 40px",
-                    fontSize: "20px",
-                    textDecoration: "none",
-                    borderRadius: "5px"
-                }}
-            >
+            <Link to="/DisplayAllProducts" className="green-button">
                 Register
             </Link>
             

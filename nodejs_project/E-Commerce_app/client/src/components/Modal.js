@@ -38,36 +38,10 @@ const Modal = ({ show, message, onClose }) => {
                     {message}
                 </p>
                 <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
-                    <button 
-                        onClick={onClose}
-                        style={{
-                            padding: "12px 30px",
-                            backgroundColor: "#28a745",
-                            color: "white",
-                            border: "none",
-                            borderRadius: "5px",
-                            cursor: "pointer",
-                            fontSize: "16px",
-                            fontWeight: "bold"
-                        }}
-                    >
+                    <button className="green-button" onClick={onClose}>
                         Continue Shopping
                     </button>
-                    <Link 
-                        to="/cart"
-                        style={{
-                            padding: "12px 30px",
-                            backgroundColor: "#007bff",
-                            color: "white",
-                            border: "none",
-                            borderRadius: "5px",
-                            cursor: "pointer",
-                            fontSize: "16px",
-                            fontWeight: "bold",
-                            textDecoration: "none",
-                            display: "inline-block"
-                        }}
-                    >
+                    <Link className="blue-button" to="/cart">
                         View Cart
                     </Link>
                 </div>

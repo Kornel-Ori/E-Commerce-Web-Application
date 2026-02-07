@@ -21,23 +21,126 @@ const AddProduct = (props) => {
     }
 
     return (
-        <div className="form-container">
+        <div className="form-container" style={{ marginBottom: "20px", maxWidth: "60%"}}>
             {redirectToDisplayAllProducts ? <Redirect to="/DisplayAllProducts" /> : null}
 
             <h1>Add Product</h1>
 
-            <form>
-                <label>Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    value={name}
-                    onChange={handleNameChange}
-                />
-            </form>
+            <form style={{ marginBottom: "20px"}}>
+                <div>
+                    <div>
+                        <label style={{
+                            margin: "20px"
+                        }}>Name</label>
+                    </div>
 
-            <Link className="red-button" to="/DisplayAllProducts">Cancel</Link>
-            <Button value="Submit" onClick={handleSubmit} className="green-button" />
+                    <input placeholder="Enter your name"
+                    style={{
+                        margin: "20px",
+                        maxWidth: "80%",
+                        width: "800px",
+                        padding: "10px",
+                        fontSize: "16px",
+                        borderRadius: "4px",
+                        border: "1px solid #ccc"
+                    }}
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={handleNameChange}
+                    />
+                </div>
+                <div>
+                    <div>
+                        <label style={{
+                            margin: "20px"
+                        }}>Category</label>
+                    </div>
+
+                    <input placeholder="Enter your category"
+                    style={{
+                        margin: "20px",
+                        maxWidth: "80%",
+                        width: "800px",
+                        padding: "10px",
+                        fontSize: "16px",
+                        borderRadius: "4px",
+                        border: "1px solid #ccc"
+                    }}
+                        type="text"
+                        name="category"
+                        // value={category}
+                        onChange={handleNameChange}
+                    />
+                </div>
+
+                <div>
+                    <div>
+                        <label style={{
+                            margin: "20px"
+                        }}>Energy Rating</label>
+                    </div>
+
+                    <input placeholder="Enter your energy rating"
+                    style={{
+                        margin: "20px",
+                        maxWidth: "80%",
+                        width: "800px",
+                        padding: "10px",
+                        fontSize: "16px",
+                        borderRadius: "4px",
+                        border: "1px solid #ccc"
+                    }}
+                        type="text"
+                        name="energy-rating"
+                        // value={energy-rating}
+                        onChange={handleNameChange}
+                    />
+                </div>
+
+                <div>
+                    <div>
+                        <label style={{
+                            margin: "20px"
+                        }}>Price</label>
+                    </div>
+
+                    <input placeholder="Enter your price"
+                    style={{
+                        margin: "20px",
+                        maxWidth: "80%",
+                        width: "800px",
+                        padding: "10px",
+                        fontSize: "16px",
+                        borderRadius: "4px",
+                        border: "1px solid #ccc"
+                    }}
+                        type="text"
+                        name="price"
+                        // value={price}
+                        onChange={handleNameChange}
+                    />
+                </div>
+
+
+            </form>
+            <div style={{
+                textAlign: "center",
+                padding: "80px 20px",
+                maxWidth: "800px",
+                margin: "0 auto"
+            }}>
+                <Link className="red-button" to="/DisplayAllProducts">Cancel</Link>
+                <Button value="Submit" onClick={handleSubmit} className="green-button" 
+                style={{
+                    display: "inline-block",
+                    padding: "15px 40px",
+                    fontSize: "20px",
+                    textDecoration: "none",
+                    borderRadius: "5px"
+                }}/>
+            </div>
+
         </div>
     )
 }
