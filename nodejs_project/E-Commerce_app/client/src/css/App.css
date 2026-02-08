@@ -58,6 +58,7 @@ html {
     width: 300px;
     padding: 8px;
     border: 1px solid #ccc;
+    font-size: 1.2rem;
 }
 
 .cart-link {
@@ -68,8 +69,6 @@ html {
 }
 
 .cart-link:hover {
-    transform: scale(1.5);
-    transition: color 0.2s, transform 0.2s;
     cursor: pointer;
 }
 
@@ -105,13 +104,13 @@ html {
 .cart-button {
     float: inline-end;
 }
-
+/* 
 .table {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     border-collapse: collapse;
-}
+} */
 
 /* link buttons */
 .cart-button,
@@ -180,15 +179,19 @@ input [type="button"] {
     border-collapse: collapse;
 }
 
-.table-container thead {
+.table-container thead{
     background-color: #aaa;
     color: #fff;
-    text-align: left;
+    text-align: center;
     text-transform: capitalize;
 }
 
-.table-container tbody tr {
-    height: 3em;
+.table-container thead tr th{
+    padding: 20px;
+}
+
+.table-container tbody {
+    text-align: center;
 }
 
 .table-container thead th,

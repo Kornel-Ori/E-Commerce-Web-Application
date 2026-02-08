@@ -19,7 +19,7 @@ const ProductTable = (props) => {
     }
     
     return (
-        <table className="table">
+        <table >
             <thead>
                 <tr>
                     <th>Favorite</th>

@@ -75,13 +75,27 @@ const Cart = (props) => {
                                     <td>{item.energyRating}</td>
                                     <td>€{item.price}</td>
                                     <td>
-                                        <input
-                                            type="number"
-                                            value={item.quantity}
-                                            onChange={(e) => updateQuantity(item._id, parseInt(e.target.value))}
-                                            min="1"
-                                            style={{ width: "60px" }}
-                                        />
+                                        <div style={{ display: "flex", gap: "5px", justifyContent: "center" }}>
+                                            <button className="button-minus">
+                                                -
+                                            </button>
+                                            <input
+                                                type="number"
+                                                value={item.quantity}
+                                                onChange={(e) => updateQuantity(item._id, parseInt(e.target.value))}
+                                                min="1"
+                                                style={{
+                                                    width: "50px",
+                                                    textAlign: "center",
+                                                    padding: "5px",
+                                                    WebkitAppearance: "none",
+                                                    MozAppearance: "textfield"
+                                                }}
+                                            />
+                                            <button className="button-plus">
+                                                +
+                                            </button>
+                                        </div>
                                     </td>
                                     <td>€{(item.price * item.quantity).toFixed(2)}</td>
                                     <td>
@@ -101,12 +115,13 @@ const Cart = (props) => {
                     </div>
                     <button className="green-button">Checkout</button>
                     <Link className="blue-button" to="/DisplayAllProducts">
-                Continue Shopping
-            </Link>
+                        Continue Shopping
+                    </Link>
                 </div>
-            )}
-            
-        </div>
+            )
+            }
+
+        </div >
     )
 }
 
